@@ -4,57 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sanjay R - AI Engineer & Innovator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="glass">
-      <header>
-        <h1>Sanjay R</h1>
-        <p class="subtitle">AI Engineer | Innovator | Problem Solver</p>
-      </header>
-      <section class="about animate-on-scroll">
-        <h2>About Me</h2>
-        <p>
-          Passionate AI engineer with a strong foundation in software engineering and a deep interest in solving complex real-world problems using AI and machine learning. Proven track record of innovation and project delivery.
-        </p>
-      </section>
-      <section class="skills animate-on-scroll">
-        <h2>Skills</h2>
-        <ul>
-          <li>Python, C++</li>
-          <li>Machine Learning, Deep Learning</li>
-          <li>Computer Vision, NLP</li>
-          <li>Flask, Django</li>
-          <li>React, HTML, CSS, JavaScript</li>
-        </ul>
-      </section>
-      <section class="projects animate-on-scroll">
-        <h2>Projects</h2>
-        <ul>
-          <li>Satellite Disaster Analysis</li>
-          <li>Traffic Accident Hotspot Analysis</li>
-          <li>EB Meter OCR Reader</li>
-          <li>Memory Mapped File Communication in C</li>
-        </ul>
-      </section>
-      <section class="achievements animate-on-scroll">
-        <h2>Achievements & Certifications</h2>
-        <ul>
-          <li>Hackerrank Badges in Python and C++</li>
-          <li>Certified in Software Engineering from CADD Centre</li>
-          <li>Multiple Academic Project Presentations</li>
-        </ul>
-      </section>
-      <section class="contact animate-on-scroll">
-        <h2>Contact</h2>
-        <p>Email: sanjayr@example.com</p>
-        <p>Phone: +91-9876543210</p>
-        <p>LinkedIn: linkedin.com/in/sanjayr</p>
-      </section>
+  <div class="cursor-follower"></div>
+
+  <header class="header">
+    <h1 class="name">Sanjay R</h1>
+    <p class="tagline">AI Engineer • Innovator • Lifelong Learner</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about" class="section animate-section">
+    <h2>About Me</h2>
+    <p>🚀 Hi! I'm Sanjay R, a passionate AI Engineer and innovator fueled by curiosity and code. I pursue intelligent solutions that redefine what’s possible in the world of data.</p>
+    <p>🎓 B.Tech in AI & Data Science from Ramco Institute of Technology</p>
+    <p>🏅 Certified in Software Engineering from CADD Center | HackerRank Badges in Python & C++</p>
+  </section>
+
+  <section id="skills" class="section animate-section">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python</li>
+      <li>C</li>
+      <li>C++</li>
+      <li>JavaScript</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section animate-section">
+    <h2>Projects</h2>
+    <div class="project-card card3d">
+      <h3>EB-Meter Project</h3>
+      <p>An intelligent energy meter reader powered by computer vision to help optimize and automate EB readings efficiently.</p>
     </div>
-    <div class="particles"></div>
-  </div>
+  </section>
+
+  <section id="contact" class="section animate-section contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:sanjaydharsaan007@gmail.com">sanjaydharsaan007@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918220159478">+91-8220159478</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sanjay-r-1b5758290" target="_blank">sanjay-r-1b5758290</a></p>
+    <p>GitHub: <a href="https://github.com/sanjay18-r" target="_blank">sanjay18-r</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>Crafted with 💡 and GSAP | &copy; 2025 Sanjay R</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
