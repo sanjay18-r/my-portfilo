@@ -8,6 +8,7 @@
   --glass-border: rgba(255, 255, 255, 0.4);
 }
 
+/* === Reset & Base === */
 * {
   margin: 0;
   padding: 0;
@@ -23,8 +24,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* === Container === */
 .container {
   width: 90%;
   max-width: 960px;
@@ -32,6 +35,7 @@ body {
   position: relative;
 }
 
+/* === Glass Effect === */
 .glass {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -39,8 +43,10 @@ body {
   backdrop-filter: blur(10px);
   padding: 2rem;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* === Header === */
 header {
   text-align: center;
   margin-bottom: 2rem;
@@ -57,6 +63,7 @@ header h1 {
   font-weight: 500;
 }
 
+/* === Section === */
 section {
   margin-bottom: 2rem;
 }
@@ -74,6 +81,7 @@ ul {
   padding-left: 1.5rem;
 }
 
+/* === Particles === */
 .particles {
   position: absolute;
   top: 0;
@@ -104,6 +112,7 @@ ul {
   }
 }
 
+/* === Scroll Animation === */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
@@ -115,63 +124,55 @@ ul {
   transform: translateY(0);
 }
 
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  section h2 {
-    font-size: 1.3rem;
-  }
-}
-/* Default light theme */
-body {
-  background-color: #f5f5f5;
-  color: #000;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* Dark theme class */
+/* === Dark Mode === */
 body.dark {
   background-color: #121212;
   color: #f5f5f5;
 }
 
-/* Toggle button styling */
+body.dark .glass {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.dark .particle {
+  background-color: #00e5ff;
+}
+
+body.dark .resume-button {
+  background-color: #2196f3;
+}
+
+body.dark .resume-button:hover {
+  background-color: #1976d2;
+}
+
+/* === Theme Toggle Button === */
 .theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 10px 16px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 999;
-}
-body.dark .theme-toggle {
-  background-color: #333;
-  color: #fff;
-}
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  padding: 10px 15px;
   background-color: #222;
   color: white;
   border: none;
-  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
 }
 
 .theme-toggle:hover {
   background-color: #444;
 }
 
+body.dark .theme-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+/* === Resume Button === */
 .resume-button {
   display: inline-block;
   margin-top: 10px;
@@ -187,14 +188,14 @@ body.dark .theme-toggle {
 .resume-button:hover {
   background-color: #0056b3;
 }
-.dark-mode {
-  background-color: #121212;
-  color: white;
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.3rem;
+  }
 }
-
-.dark-mode .glass {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-
