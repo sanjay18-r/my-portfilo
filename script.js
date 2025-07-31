@@ -1,25 +1,12 @@
-// Scroll animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
+function toggleTheme() {
+  const body = document.body;
+  const isDark = body.style.backgroundColor === "white";
 
-document.querySelectorAll('.animate-on-scroll').forEach(el => {
-  observer.observe(el);
-});
-
-// Particle generator
-const particleContainer = document.querySelector('.particles');
-for (let i = 0; i < 50; i++) {
-  const particle = document.createElement('div');
-  particle.classList.add('particle');
-  particle.style.width = `${Math.random() * 6 + 4}px`;
-  particle.style.height = particle.style.width;
-  particle.style.left = `${Math.random() * 100}%`;
-  particle.style.animationDelay = `${Math.random() * 15}s`;
-  particleContainer.appendChild(particle);
+  if (isDark) {
+    body.style.backgroundColor = "#1c1f26";
+    body.style.color = "#ffffff";
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.color = "#000000";
+  }
 }
