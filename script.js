@@ -23,8 +23,3 @@ for (let i = 0; i < 50; i++) {
   particle.style.animationDelay = `${Math.random() * 15}s`;
   particleContainer.appendChild(particle);
 }
-
-// Theme toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
