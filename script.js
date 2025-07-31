@@ -1,55 +1,45 @@
 window.onload = () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Header animation
-  gsap.from(".name", {
-    duration: 1,
-    opacity: 0,
-    y: -50,
-    ease: "power3.out"
-  });
+  // Typing Effect
+  const texts = ["Sanjay R", "an AI Engineer", "a Creative Coder", "a Futurist"];
+  const typeEl = document.querySelector(".typing-text");
+  let i = 0, j = 0, current = "", isDeleting = false;
 
-  gsap.from(".tagline", {
-    duration: 1.2,
-    delay: 0.3,
-    opacity: 0,
-    y: 40,
-    ease: "power2.out"
-  });
+  function type() {
+    current = texts[i];
+    typeEl.textContent = current.substring(0, j);
+    if (!isDeleting) {
+      j++;
+      if (j === current.length + 1) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+      }
+    } else {
+      j--;
+      if (j === 0) {
+        isDeleting = false;
+        i = (i + 1) % texts.length;
+      }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+  type();
 
-  gsap.from(".navbar a", {
-    duration: 0.8,
-    opacity: 0,
-    y: -20,
-    stagger: 0.2,
-    ease: "back.out(1.7)"
-  });
-
-  gsap.utils.toArray(".animate-section").forEach((section) => {
+  // Scroll animations
+  gsap.utils.toArray(".animate-section").forEach(section => {
     gsap.to(section, {
       scrollTrigger: {
         trigger: section,
         start: "top 80%",
         toggleActions: "play none none none"
       },
-      duration: 1.2,
       y: 0,
       opacity: 1,
-      ease: "power3.out"
+      duration: 1.4,
+      ease: "power4.out"
     });
-  });
-
-  // 3D card hover
-  const card = document.querySelector(".card3d");
-  card.addEventListener("mousemove", (e) => {
-    const { offsetX, offsetY } = e;
-    const { offsetWidth, offsetHeight } = card;
-    const rotateY = ((offsetX / offsetWidth) - 0.5) * 20;
-    const rotateX = ((offsetY / offsetHeight) - 0.5) * -20;
-    card.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-  });
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
   });
 
   // Mouse follower
